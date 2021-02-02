@@ -1,0 +1,21 @@
+{% extends 'bast.html' %}
+{% load static %}
+
+{% block title %}index{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                {% include 'core/topic_list.html' %}
+            </div>
+            <div class="col-3">
+                {% include 'core/categories.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
