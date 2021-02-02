@@ -1,0 +1,10 @@
+    <div class="topic-list">
+        {% for topic in topics %}
+            <div class="topic-list__item">
+                <h3><a href="#">{{ topic.title }}</a> </h3>
+                <h5>Categories ({{ topic.categories__count }}): {% for category in topic.categories.all %}{{ category.title }}{% if not forloop.last %}, {% endif %}{% endfor %}</h5>
+                <p>{{ topic.body }}</p>
+                <a href="{% url 'topic_details' topic.pk %}" class="btn btn-outline-secondary">more</a>
+            </div>
+        {% endfor %}
+    </div>
